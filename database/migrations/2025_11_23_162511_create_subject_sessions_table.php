@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('subject_sessions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subject_id')->constrained('subjects')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('name', 100);
-            $table->string('description', 512)->nullable();
-            $table->string('color', 7);
+            $table->integer('duration')->default(0);
             $table->dateTime('started_at');
             $table->dateTime('finished_at')->nullable();
             $table->dateTime('cancelled_at')->nullable();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('subject_sessions');
     }
 };

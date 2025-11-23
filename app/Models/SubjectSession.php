@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class SubjectSession extends Model
 {
     protected $fillable = [
-        'name',
+        'subject_id',
         'user_id',
-        'description',
-        'color',
+        'duration',
         'started_at',
         'finished_at',
         'cancelled_at',
     ];
 
     protected $casts = [
+        'duration' => 'integer',
         'started_at' => 'datetime',
         'finished_at' => 'datetime',
         'cancelled_at' => 'datetime',

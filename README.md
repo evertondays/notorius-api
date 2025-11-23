@@ -6,7 +6,7 @@ Este repositório contém uma aplicação **Laravel (API)** rodando em um ambien
 - **Nginx** (container `laravel_nginx`)
 - **PostgreSQL** (container `notorius_db`)
 
-A ideia é você subir tudo com `docker compose` e já ter o ambiente pronto para desenvolvimento.
+A ideia é você subir tudo com `docker compose up -d` e já ter o ambiente pronto para desenvolvimento.
 
 ---
 
@@ -17,6 +17,14 @@ A ideia é você subir tudo com `docker compose` e já ter o ambiente pronto par
 - Opcional: **Composer** instalado localmente (se quiser rodar fora do container)
 
 ## 🛠 Comandos Úteis
+
+### Iniciar aplicação
+
+Para subir os containers necessários para usar a api use:
+
+```bash
+docker compose up -d --build
+```
 
 ### Rodar Migrations
 
